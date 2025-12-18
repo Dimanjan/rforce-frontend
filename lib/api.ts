@@ -52,3 +52,14 @@ export const getProductReviews = async (productId: number) => {
     const response = await api.post('/reviews/', reviewData);
     return response.data;
   };
+
+// Add this to lib/api.ts
+export const createOrder = async (orderData: any) => {
+    const response = await api.post('/orders/', orderData);
+    return response.data;
+  };
+  
+  export const getOrders = async () => {
+    const response = await api.get('/orders/');
+    return response.data.results;
+  };

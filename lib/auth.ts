@@ -40,3 +40,9 @@ export const getCurrentUser = async () => {
     return null;
   }
 };
+
+// Add this to lib/auth.ts
+export const updateUser = async (userData: any) => {
+    const response = await api.patch('/auth/user/', userData);
+    return response.data;
+  };
