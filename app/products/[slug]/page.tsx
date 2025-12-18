@@ -23,7 +23,7 @@ export default function ProductDetailPage() {
     const fetchProduct = async () => {
       try {
         const products = await getProducts()
-        const foundProduct = products.find((p) => p.slug === slug)
+        const foundProduct = products.find((p: Product) => p.slug === slug)
         if (foundProduct) {
           setProduct(foundProduct)
         } else {
