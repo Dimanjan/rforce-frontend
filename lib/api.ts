@@ -41,3 +41,14 @@ export const getCategories = async () => {
 };
 
 export default api;
+
+// Add these to lib/api.ts
+export const getProductReviews = async (productId: number) => {
+    const response = await api.get(`/reviews/?product=${productId}`);
+    return response.data.results;
+  };
+  
+  export const createReview = async (reviewData: { product: number; rating: number; comment: string }) => {
+    const response = await api.post('/reviews/', reviewData);
+    return response.data;
+  };
